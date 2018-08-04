@@ -19,13 +19,20 @@ $green: #00FF00;
     flex-direction: $direct;
 }
 
-/** SCSS Mixins */
 @mixin background($url, $position) {
     background: $url;
     background-position: $position;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+
 h1 {
     background: $purple;
     color: $white;
@@ -79,6 +86,66 @@ nav {
     .archive::after {
         content: 'Blog';
     }
+    #openMenu {
+        cursor: pointer;
+        display: none;
+        height: 25px;
+        width: 30px;
+        .bar {
+            background: $white;
+            height: 5px;
+        }
+        .bar:nth-child(2) {
+            margin: 5px 0;
+        }
+    }
+}
+
+#mobile-overlay {
+    background: $black;
+    height: 100vh;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    transition: 0.5s all ease;
+    top: 0;
+    width: 0;
+    z-index: 5;
+    nav {
+        background: $black;
+        display: block;
+        height: auto;
+        a {
+            display: block;
+            height: 100px;
+            font-size: 2.5rem;
+            text-decoration: none;
+            padding: 0 1rem;
+            @include flexbox(center, flex, flex-start, row);
+            img {
+                border: 2px solid $white;
+                border-radius: 50%;
+                margin-right: 1rem;
+                width: 50px;
+                height: 50px;
+            }
+            span {
+                color: $white;
+            }
+        }
+        a:hover {
+            background: $green;
+        }
+    }
+}
+
+#closeMenu {
+    color: $white!important;
+    font-size: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+
 }
 
 footer {
@@ -135,6 +202,44 @@ footer {
                 color: $purple;
                 text-decoration: none;
             }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .container {
+        width: 100%;
+    }
+    .post {
+        h1 {
+            border-radius: 0;
+            font-size: 2rem;
+        }
+        .img {
+            border-radius: 0;
+            .post-info {
+                border-radius: 0 0 10px 0;
+            }
+        }
+        .content {
+            padding: 0 1rem;
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .main-nav {
+        height: 50px;
+        padding-left: 1rem;
+        justify-content: flex-start;
+        #openMenu {
+            display: block;
+        }
+        .link {
+            display: none;
         }
     }
 }

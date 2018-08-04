@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Schmenaissance Men</title>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <!-- Header -->
@@ -17,18 +18,42 @@
         <h1>The Schmenaissance Men</h1>
 
         <!-- Navigation -->
-        <nav>
+        <nav class="main-nav">
             <a href="#" class="link video" target="_blank"></a>
             <a href="#" class="link archive"></a>
             <a href="#" class="link about"></a>
+            <div id="openMenu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
+
+        <div id="mobile-overlay">
+            <i id="closeMenu" class="fa fa-times">
+            </i>
+            <nav>
+                <a href="https://www.youtube.com" target="_blank">
+                    <img src="assets/video.png" alt="Youtube">
+                    <span>Youtube</span>    
+                </a>
+                <a href="blog.html">
+                    <img src="assets/archive.png" alt="Blog">
+                    <span>Blog</span> 
+                </a>
+                <a href="about.html">
+                    <img src="assets/emptyPerson.png" alt="About">
+                    <span>About</span> 
+                </a>
+            </nav>
+        </div>
 
         <main>
             <div class="container">
                 <div class="post">
-                    <h1>The Awesome Blog Title</h1>
+                    <h1>Awesome Blog Title</h1>
                     <div class="img">
-                        <span class="post-info"><a class="author" href="#"></a>4/16/2018</span>
+                        <span class="post-info"><a class="author" href="about.html#reece"></a>4/16/2018</span>
                     </div>
                     <div class="content">
                         <p>Lorem ipsum, <a href="#">olor sit amet consectetur adipisicing elit</a>d. Eveniet eos, asperiores, dolore porro tenetur quaerat accusantium et voluptatem voluptatum eaque, maiores nostrum nulla facilis excepturi debitis! Impedit velit ipsa totam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore rerum, alias soluta sit placeat veniam aspernatur harum accusantium quo iusto id omnis ab porro reprehenderit voluptates. Illum assumenda aspernatur voluptate.</p>
@@ -45,5 +70,7 @@
         <footer>
             <p>Schmenaissance Men &copy; 2018</p>
         </footer>
+
+        <script src="js/main.js"></script>
     </body>
 </html>
